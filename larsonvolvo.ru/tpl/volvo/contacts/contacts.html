@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+    <link rel="stylesheet" href="../../assets/loader/css/loader.css" />
+    <link rel="stylesheet" href="../../assets/cross.css" />
+    <link rel="stylesheet" href="../../assets/footer/css/footer.css" />
+    <link rel="stylesheet" href="../../assets/left/css/left.css" />
+    <link rel="stylesheet" href="../../assets/panorama/css/panorama.css" />
+    <link rel="stylesheet" href="../../assets/Navigation/css/navig.css" />
+    <title>{title}</title>
+  </head>
+  <style>
+    body {
+      background-image: url("../../assets/img/Larson_backgrounds/contactsBg.jpg");
+    }
+    a {
+      color: lightblue;
+    }
+	.blur_container {
+      overflow: hidden;
+    }
+  </style>
+  <body>
+    <div class="super_container"></div>
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+    <div class="modalClose"></div>
+    <header>
+      <div class="logo">
+        <a href="/">
+          <img src="../assets/img/larson-white.svg" alt="" />
+        </a>
+      </div>
+    </header>
+    <nav role="navigation">
+      <div id="menuToggle">
+        <div class="burger">
+          <span class="line1"></span>
+          <span class="line2"></span>
+          <span class="line3"></span>
+        </div>
+        <ul id="menu" class="links">
+          <a href="/about"><li >О нас</li></a>
+          <a href="/contact"><li class="active">Контакты</li></a>
+          <a href="/corporate"><li>Корпоративным клиентам</li></a>
+          <a href="/review"><li>Отзывы</li></a>
+          <a href="/tires"><li>Шины</li></a>
+          <a href="/promo"><li>Aкции</li></a>
+          <a href="/parts"><li>Запчасти и аксессуары</li></a>
+          <a href="/uslugi/strahovanie-avto"><li>Страхование</li></a>
+          <a href="/uslugi/evakuator"><li>Эвакуация</li></a>
+          <a href="/uslugi/diagnosticheskaya-karta"><li>Диагностическая карта</li></a>
+          <!--<a href="#"><li>Услуги и цены</li></a>-->
+          <a href="https://body.larsonv.ru"><li>Кузовной ремонт</li></a>
+        </ul>
+      </div>
+    </nav>
+    <div class="blur_container">
+    <main class="sectionContent">
+      <section class="panorama flex_container">
+        <div class="pano_cont">
+          <p>Виртуальный тур</p>
+          <div id="frame" class="fr">
+            <iframe
+              class="panoram"
+              src="https://yandex.ru/map-widget/v1/-/CCQh4GuthC"
+              frameborder="1"
+              allowfullscreen="true"
+            ></iframe>
+          </div>
+		</div>
+        <div class="card__block card">
+          <div class="texter">
+            <small>Ежедневно в 9:00 до 20:00</small>
+            <small>Единый телефон: <a href="tel:+74957811081"> +7 (495) 781-10-81</a>.</small>
+          </div>
+          <div class="texter">
+			<small>
+				<a target="_blank" href="#" onclick="yandexNavi(1)">Larson Коломенская (открыть в Яндекс.Навигаторе)</a>
+				</small>
+            <small>115533, г. Москва, проспект Андропова, д. 22, стр. 2 БЦ «Нагатинский»</small>
+          </div>
+          <!-- <div class="texter">
+            <small>    <a
+              href="https://yandex.ru/maps/213/moscow/?ll=37.663751%2C55.682421&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Forg%3Foid%3D225633850705&z=16"
+              >Larson Кузовной центр (открыть в Яндекс.Картах)</a
+            ></small>
+            <small>м. Коломенская</small>
+            <small>проспект Андропова, д. 22, стр.2, БЦ «Нагатинский»</small>
+          </div> -->
+		  <div class="texter">
+			<small>
+				<a target="_blank" href="#" onclick="yandexNavi(2)">Larson Можайка (открыть в Яндекс.Навигаторе)</a
+			  >
+			</small>
+			<small>121596, Московская обл., Новоивановское, Можайское шоссе, вл. 167<br>
+				57-й км МКАД, внешняя сторона</small>
+			<small>Внимание! Заезд с дублёра МКАД.</small>
+		  </div>
+        </div>
+      </section>
+      <section class="flex_container">
+		<div class="card__block card mr">
+            <p>Larson Коломенская</p>
+            <!-- <img
+              src="../assets/img/Larson_backgrounds/Images/Коломенская.jpg"
+              alt=""
+            /> -->
+
+            <!-- <iframe
+              src="https://yandex.ru/maps/213/moscow/?ll=37.491332%2C55.602270&mode=routes&rtext=55.545329%2C37.333149~55.684547%2C37.661111&rtt=auto&ruri=~&z=11"
+              width="100%"
+              style="min-height: 350px;"
+              frameborder="0"
+            ></iframe> -->
+            <!-- <iframe
+            class="panoram"
+            src="https://yandex.ru/map-widget/v1/-/CCQh4GuthC"
+            frameborder="1"
+            allowfullscreen="true"
+          ></iframe> -->
+          <!-- <iframe
+          class="panoram"
+          src="https://www.google.ru/maps/dir/55.6228601,37.4951353/Larson+Коломенская,+Андропова+пр-т,+22+стр.2,+Москва,+115533/@55.6745636,37.4970957,12z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x414ab4a390504931:0x8d3d0c6312dae36b!2m2!1d37.661002!2d55.68316"
+          width="100%"
+          style="min-height: 350px;"
+          frameborder="0"
+        ></iframe> -->
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa530216490486b1f7b1ae5dcf8db4acfddc4b78beb189f5a8c8695cd1665d510&amp;source=constructor"
+              width="100%"
+              style="min-height: 350px;"
+              frameborder="0"
+            ></iframe>
+            <p><a href="tel:+74957811081"> +7 (495) 781-10-81.</a></p>
+            <p><a href="mailto:info@larsonv.ru"> info@larsonv.ru</a></p>
+          </div>
+        <div class="card__block card root">
+          <p>м. Коломенская</p>
+          <p>На автомобиле:</p>
+          <div class="flex_container">
+            <div class="card__block">
+              <small class="circle_1">
+                Из центра: по проспекту Андропова, после Нагатинского моста
+                направо, вниз к набережной и налево на территорию БЦ
+                «Нагатинский» перед АЗС «Лукойл».
+              </small>
+            </div>
+            <div class="card__block">
+              <div class="video">
+                <iframe
+                src="https://www.youtube.com/embed/iBTVf8yDd1M"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="flex_container">
+            <div class="card__block">
+              <small class="circle_2">
+                По Нагатинской набережной: направо перед Нагатинским мостом,
+                далее вверх от набережной, сразу после АЗС «Лукойл» направо на
+                территорию БЦ «Нагатинский»
+              </small>
+            </div>
+            <div class="card__block">
+              <div class="video">
+                <iframe
+                src="https://www.youtube.com/embed/iBTVf8yDd1M"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="flex_container">
+            <div class="card__block">
+              <small class="circle_3">
+                Из области: по проспекту Андропова, разворот под Нагатинским
+                мостом, далее вверх от набережной, сразу после АЗС «Лукойл»
+                направо на территорию БЦ «Нагатинский».
+              </small>
+            </div>
+            <div class="card__block">
+              <div class="video">
+                <iframe
+                src="https://www.youtube.com/embed/iBTVf8yDd1M"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="flex_container cardBG">
+          <div class="card__block">
+            <h4>На метро или пешком:</h4>
+            <small>
+              - По замоскворецкой линии метро (зеленая ветка) до станции
+              Коломенская, последний вагон из центра, выход налево, из
+              стеклянных дверей налево, в сторону улиц: проспект Андропова и
+              Высокая улица (Выходы номер 5 и 6), далее по лестнице направо
+              (выход номер 6).</small
+            >
+            <small>
+              - Выйдя на улицу идете прямо, вдоль проспекта Андропова вниз к
+              набережной до торгово-развлекательного комплекса “НОРА”.</small
+            >
+            <small>
+              - Поворачиваете налево и идете прямо вдоль
+              торгово-развлекательного комплекса “НОРА”, так чтобы он оставался
+              по правую руку.
+            </small>
+            <small>
+              - Далее увидите вывеску “Кузовной центр Larson”. Проходите мимо до
+              угла здания и поворачиваете направо, затем прямо до вывески
+              “Larson” и снова направо, входите в дверь и на КПП говорите
+              “Здравствуйте, я в Larson”.</small
+            >
+            <small>
+              - После КПП, во внутреннем дворе двигаетесь прямо, слева одно
+              отдельно стоящее здание — это «Larson».
+            </small>
+            <small>“Добро пожаловать!”</small>
+          </div>
+          <div class="card__block">
+            <div class="video bigVideo ">
+              <iframe
+              src="https://www.youtube.com/embed/a-LqCwChWO8"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="flex_container"></section>
+    </main>
+    <footer></footer>
+
+    <!-- <div class="blur_container"> -->
+    <script src="../../assets/footer/component/footer.js?{rand}"></script>
+    <script src="../../assets/js/about.js?{rand}"></script>
+  </body>
+</html>

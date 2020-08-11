@@ -1,0 +1,44 @@
+body {
+	background-image: url('img/bg-corporate.png');
+	background-attachment: fixed;
+}
+
+h2 { font-size: 24px; }
+
+ul {
+	padding: 0;
+}
+
+.logos {
+	margin-top: 24px;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.logos img {
+	margin: 18px;
+}
+
+.side ul {
+	margin-bottom: 60px;
+}
+
+.about {
+	color: #000;
+	background-color: #fff;
+	padding: 0px 40px 44px 44px;
+	text-align: justify;
+}
+
+@media (min-width: 1200px) {
+	.side {
+		margin-left: 25%;
+		width: 70%;
+	}
+	
+	.side ul {
+		margin-bottom: 160px;
+	}
+
+}

@@ -1,0 +1,108 @@
+<form rel="c={name}&m=Save&id={ID}" class="form-horizontal m12" role="form">
+<div class="form-group col-xs-12">
+	<label class="control-label col-xs-2">Заголовок</label>
+	<div class="col-xs-10">
+		<input class="form-control" type="text" name="title" value="{title}">
+	</div>
+</div>
+<div class="form-group col-xs-12">
+	<div class="col-xs-10 col-xs-offset-2" id="-Photo">
+		<div data-name="file" class="fileuploader"></div>
+		<div id="-PhotoSet"></div>
+	</div>
+</div>
+<div class="form-group col-xs-12">
+	<label class="control-label col-xs-2">Краткое содержание</label>
+	<div class="col-xs-10">
+		<textarea class="form-control" type="text" name="brief">{brief}</textarea>
+	</div>
+</div>
+<div class="form-group col-xs-12">
+	<label class="control-label col-xs-2">Текст</label>
+	<div class="col-xs-10">
+		<textarea class="form-control" type="text" id="txt" name="txt">{txt}</textarea>
+	</div>
+</div>
+<div class="form-group col-xs-12">
+	<div class="col-xs-12">
+		{{is_save}{<button type="button" class="btn btn-success form-submit">Сохранить</button>}{}}
+		{{is_restore}{<button type="button" class="btn btn-success object-switch pull-left" data-m="Restore" id="object-restore">Восстановить</button>}{}}
+		{{is_delete}{<button type="button" class="btn btn-danger object-switch" data-m="Delete">Удалить</button>}{}}
+	</div>
+</div>
+</form>
+<link rel="stylesheet" href="js/fileupload/uploadfile.css">
+<script src="js/fileupload/jquery.uploadfile.js"></script>
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=ealtomhochuqu8w6650o64h63eme3y222hyi3vyab5tr6893"></script>
+<script>
+
+$('#-Photo').on('click','.file-remove',function(){
+	var pos = photos.indexOf(this.id)
+	photos.splice(pos,1)
+	$(this).parent().remove()
+})
+
+$(function(){
+	tinymce.init({
+		selector: '#txt',
+		height: 250,
+		menubar: false,
+		plugins: [
+			'advlist autolink lists link image charmap print preview anchor',
+			'searchreplace visualblocks code fullscreen',
+			'insertdatetime media table contextmenu paste code'
+		],
+		toolbar: 'undo redo | insert | bold italic\
+	 | alignleft aligncenter alignright alignjustify\
+	 | bullist numlist outdent indent | link image | removeformat code',
+	})
+	
+	var photos = '{photos}'.split(','),
+		dir = '{dir}',
+		PhotoAdd = function(p) {
+			var html = ''
+			p.forEach(function(photo){
+				photo && (html += '<span><img src="' + dir+photo + '" class="photo img-thumbnail"><input type="hidden" name="photos[]" value="' + photo + '">\
+					<a class="glyphicon glyphicon-remove cp file-remove" id="' + photo + '"></a></span>')
+			})
+			$('#-PhotoSet').append(html)
+		}
+		
+	PhotoAdd(photos)
+
+	$('.fileuploader').uploadFile({
+		dragDrop: true,
+		formData: {
+			c: '{name}',
+			m: 'upload',
+			id: '{ID}',
+		},
+		multiple: false,
+		dragDrop: false,
+		showStatusAfterSuccess: false,
+		allowedTypes: 'jpg,jpeg,png,gif',
+		acceptFiles: '.jpg,.jpeg,.png,.gif',
+		returnType: 'json',
+		abortStr: 'Отменить',
+		cancelStr: 'Отменить',
+		doneStr: 'Фото загружено',
+		extErrorStr: 'Неверный тип файла. Разрешены: ',
+		sizeErrorStr: 'Максимально разрешённый размер файла: ',
+		uploadErrorStr: 'Ошибка загрузки',
+		uploadStr: 'Загрузить фото',
+		onSuccess: function (files, data, xhr) {
+			if (data.error) {
+				alert(data.error)
+				return
+			}
+
+			if (!~photos.indexOf(data.filename)) {
+				$('#-PhotoSet').html('')
+				PhotoAdd([data.filename])
+				photos[0] = data.filename
+			}
+		}
+	})
+})
+
+</script>

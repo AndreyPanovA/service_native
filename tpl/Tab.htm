@@ -1,0 +1,268 @@
+<nav class="affix a{ID_STORE}"></nav>
+<div id="tab-content"></div>
+<script>
+
+var tabs = {tabs},
+	tabs_html = '',
+	is_play = 0
+
+for (var t in tabs) {
+	tabs_html += '<div id="tab-'+t+'" class="pics-2 tab i-p i-'+t+'">'+tabs[t]+'</div>'
+}
+
+$('.affix').html(tabs_html)
+
+$(function(){
+	var xhr
+
+	function process_href(){
+		var a = location.href.match(/#(\w+)(.*)/),
+			table = $('#tab-content'),
+			qs = ''
+
+		if (xhr && xhr.readyState===1) { //!!! требует серверной части fastcgi_finish_request или аналога для apache
+			xhr.abort()
+			table.removeClass('blur')
+		}
+
+		//определить вкладку (tab) и строку запроса (qs)
+		if (a) { //из урла
+			tab = a[1]
+			qs = a[2]
+		} else { //урл пустой
+			if (tab = getCookie('tab')) { //из куки
+				qs = getCookie('tab_'+tab)
+			} else { //первый в интерфейсе
+				tab = $('.tab:first').attr('id').slice(4)
+			}
+			//вывести
+			location.href = '#'+tab+qs
+		}
+
+		table.addClass('blur')
+
+		//запрос
+		xhr = $.ajax({
+			data:'c='+tab+'&m=Lists'+qs+'&width='+(table.outerWidth()-160),
+			success:function(m) {
+				if (m.reload) {
+					dreload()
+					return
+				}
+
+				setCookie('tab',tab) //сохранить вкладку
+				setCookie('tab_'+tab,qs) //сохранить её параметры
+
+				if (m.title) {
+					$('title').html(m.title)
+				}
+
+				table.html(m.html)
+
+				switch (tab) {
+					case 'Client':
+						$('.approve-decline').on('click',function(){
+							if (!confirm('Удалить запрос на регистрацию Клиента?')) return
+							var id = $(this).closest('tr').data('id')
+							$.ajax({
+								data: {
+									c: 'Client',
+									m: 'ApproveDecline',
+									id: id,
+								},
+								success: dreload
+							})
+						})
+					break
+					case 'Part':
+						PartOther()
+					break
+					case 'Phone':
+						$('audio')
+							.on('play',function(){
+								is_play = 1
+							})
+							.on('pause',function(){
+								is_play = 0
+							})
+							.on('ended',function(){
+								var $prev = $(this).closest('tr').prev()
+
+								do {
+									var $audio = $prev.find('audio')
+									if ($audio.length) {
+										$audio.trigger('play')
+										return
+									}
+									$prev = $prev.prev()
+								} while ($prev.length)
+
+								var page = location.href.match(/&pg=(\d+)/)
+
+								page
+								&& (page = page[1] - 1)
+								&& (is_play = 1)
+								&& (location.href = location.href.replace(/&pg=(\d+)/,'&pg='+page))
+							})
+
+						is_play && $('audio:last').trigger('play')
+					break
+					case 'Orders':
+						var Part_code = function() {
+								location.href = location.href.replace(/&search\[Part_code\].*?=\w*/g,'')
+									+ (dataPart_code.data
+										? '&search[Part_code][with_linked]='+$('#part-with-linked:checked').length
+											+'&search[Part_code][q]='+(dataPart_code.data[this.selectedIndex - 1].id)
+										: ''
+									)
+							},
+							dataPart_code = {
+								width: '400px',
+								placeholder: 'Найти заказы с деталью',
+								allow_single_deselect: true,
+								search: {c:'Part'},
+								onchange: Part_code,
+								current: m.dataPart_code
+							}
+						$('#-chosen-part').html(Chosen(dataPart_code))
+						$('#part-with-linked').on('change',function(){
+							location.href = location.href.replace(/(&search\[Part_code\]\[with_linked\]=)./,'$1'+(+this.checked))
+						})
+
+						$('.sms_delay').on('click',function(){
+							if (!confirm('Отправить данному Клиенту сообщение о том, что заказ сформирован?')) return
+
+							var $t = $(this),
+								id = $t.closest('tr').data('id')
+							$.ajax({
+								data: {
+									c: tab,
+									m: 'sms_delay',
+									id: id,
+								},
+								success: function(r) {
+									r.ok && $t.replaceWith('<span class="text-success small"> СМС успешно отправлено</span>')
+								}
+							})
+						})
+
+
+						ProdCalendar({
+							paramsItemTable: {
+								origin: tab,
+								container: 'day'+tab,
+								container_class: '',
+								is_readonly: true,
+								is_nosearch: true,
+								columns: {
+									num: {
+										thead:'<th>№</th>',
+										tfoot:'<td>Прибыль сегодня</td>',
+										tbody: function(o) {
+											return '<td><a class="overlay-load" href="?c='+tab+'&m=Create&id='+o.d.id+'">'+o.value+'</a></td>'
+										}
+									},
+									sum_out: {
+										datatype:'money',
+										is_sum: true,
+										noinput: true,
+										thead:'<th class="col-xs-1 r">Прибыль</th>',
+										tfoot:'<td class="-s-sum_out s r"></td>',
+										tbody: function(o) {
+											return '<td class="r">'+o.value+'</td>'
+										}
+									}
+								},
+							},
+							unit: 'Прибыль',
+							unit_short: 'руб.',
+							decimal: 0,
+						})
+
+						$('#plan').on('click',function(){
+							$('#prod-calendar').toggleClass('hidden')
+						})
+					break
+					case 'Service':
+						ProdCalendar({
+							paramsItemTable: {
+								origin: tab,
+								container: 'day'+tab,
+								container_class: '',
+								is_readonly: true,
+								is_nosearch: true,
+								columns: {
+									num: {
+										thead:'<th>№</th>',
+										tfoot:'<td>Нормочасов сегодня</td>',
+										tbody: function(o) {
+											return '<td><a class="overlay-load" href="?c='+tab+'&m=Create&id='+o.d.id+'">'+o.value+'</a></td>'
+										}
+									},
+									sum_out: {
+										datatype:'money',
+										is_sum: true,
+										thead:'<th class="col-xs-1 r">Н/Ч</th>',
+										tfoot:'<td class="-s-sum_out s r"></td>',
+										tbody: function(o) {
+											return '<td class="r">'+o.value+'</td>'
+										}
+									}
+								},
+							},
+							unit: 'Нормочасов',
+							unit_short: 'н/ч',
+							decimal: 1,
+						})
+
+						$('#toggle-prod-calendar').on('click',function(){
+							$(this).toggleClass('glyphicon-eye-close glyphicon-eye-open').next().toggle()
+						})
+						
+						$('#plan').on('click',function(){
+							$('#prod-calendar').toggleClass('hidden')
+						})
+					break
+					case 'Schedule':
+						NavMonth()
+					break
+					case 'Salary':
+						NavMonth()
+						SalaryPayed()
+					break
+				}
+
+				var func = ''
+				if (m.callback!=undefined) {
+					func = m.callback
+				} else if (this.callback!=undefined) {
+					func = this.callback
+				}
+
+				if (func) {
+					if (func==1) {
+						func = tab
+					}
+					eval('success_'+func+'(m,this)')
+				}
+
+				InitLive()
+
+				$('.pics-2').removeClass('active')
+				$('#tab-'+tab).addClass('active')
+				table.removeClass('blur')
+				window.scroll(0,0)
+			}
+		})
+	}
+
+	$('.tab').on('click',function(){
+		var tab = this.id.slice(4)
+		location.href = '#' + tab + getCookie('tab_'+tab)
+	})
+
+	$(window).on('hashchange',process_href)
+
+	process_href()
+})
+</script>

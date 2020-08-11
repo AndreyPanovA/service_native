@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <style>
+      html {
+        height: 100%;
+      }
+      body {
+        background: black;
+        background: url("./assets/img/Larson_backgrounds/About.png") no-repeat;
+        background-size: cover; /* Масштабирует картинку сохраняя пропорции */
+        font-family: "Open Sans", Arial, sans-serif;
+        font-family: "Roboto", Arial, sans-serif !important;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        text-decoration: none;
+      }
+      .over {
+        background: rgba(0, 0, 0, 0.7); /* Цвет фона и значение прозрачности */
+        position: absolute; /* Абсолютное позиционирование */
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0; /* Отступы от краев браузера */
+      }
+      .four0 {
+        margin-top: 100px;
+        text-align: center; /* Выравнивание текста по центру */
+        font-size: 10em;
+        color: #fcf9f9;
+        position: relative; /* Относительное позиционирование */
+        z-index: 2; /* Порядок наложения элемента по высоте */
+      }
+      .notfound {
+        text-align: center;
+        color: #fff;
+        font-size: 2em;
+        position: relative; /* Относительное позиционирование */
+        z-index: 2; /* Порядок наложения элемента по слоям в глубину */
+        /*  */
+      }
+      .notfound a {
+        color: #fff;
+        font-size: 0.8em;
+      }
+      .notfound a:hover {
+        color: white;
+        text-decoration: none;
+      }
+      .logo {
+        width: 300px;
+        position: relative;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        height: 100px;
+
+        width: 100vw;
+      }
+      img {
+        width: 300px;
+      }
+
+      span {
+        color: #938de9 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo">
+      <img src="./assets/img/larson-white.svg" alt="Логотип" />
+    </div>
+    <div class="over"></div>
+    <div class="four0">404</div>
+    <!-- <img src="./assets/img/larson-white.svg" alt="" /> -->
+    <div class="notfound">
+      страница еще не готова !<br />
+      <a href="./index.html">
+        Вы можете перейти на <span>главную страницу...</span></a
+      >
+    </div>
+  </body>
+</html>

@@ -1,0 +1,158 @@
+@font-face {
+	font-family: 'Rouble';
+	src: url('fonts/RUBSN.otf');
+}
+
+.rouble {
+	font-family: 'Rouble', Helvetica, Arial, sans-serif;
+}
+
+body {
+	background-image: url('img/bg-tires.png');
+	background-attachment: fixed;
+}
+
+h1 {
+	font-size: 40pt;
+}
+
+.side {
+	margin: 0 40px 30px 40px;
+	line-height: 1.1em;
+}
+
+::-webkit-scrollbar {
+	display: none; 
+}
+
+.item {
+	background-color: rgba(255, 255, 255, 0.11);
+	padding: 17px 25px;
+	margin-bottom: 30px;
+}
+
+.numbers {
+	display: flex;
+	justify-content: space-between;
+}
+
+.item a {
+	color: inherit;
+	text-decoration: none;
+	border-bottom: 1px #fff dashed;
+	display: inline-block;
+	line-height: 0.9em;
+}
+
+.filter {
+	font-size: 10pt;
+}
+
+.filter-season {
+	margin: 10px 0;
+}
+
+.filter input[type=number] {
+	width: 50px;
+	height: 15px;
+	background-color: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+}
+
+.filter input[type=checkbox] {
+	vertical-align: middle;
+	margin-left: 8px;
+}
+
+.tire-service tr {
+	height: 2.5em;
+}
+
+.price {
+	text-align: right;
+	vertical-align: top;
+	white-space: nowrap;
+}
+
+.brand-item-wrap {
+	width: 25%;
+	display: inline-block;
+}
+
+.tire-info {
+	margin-left: 140px;
+}
+
+.tire-pic {
+	float: left;
+	height: 100%;
+	margin-right: 16px;
+}
+
+.tire-title {
+	font-weight: bold;
+	font-size: 18pt;
+	line-height: 1em;
+}
+
+.tire-price {
+	font-weight: bold;
+	font-size: 22pt;
+	line-height: 1.3em;
+	margin-bottom: 20px;
+}
+
+.tire-params {
+	font-size: 12pt;
+	line-height: 1.3em;
+}
+
+.tire-code {
+	font-size: 10pt;
+	color: #ccc;
+}
+
+.right {
+	overflow-y: scroll;
+	height: 85vh;
+}
+
+@media (min-width: 1200px) {
+	.side {
+		margin: 0 40px 30px 40px;
+	}
+
+	.left {
+		margin: 0 0 30px 16px;
+	}
+
+	.right {
+		right: 0;
+	}
+}
+
+#tire-find {
+	font-family: 'ProximaNovaRegular', Helvetica, Arial, sans-serif;
+	font-size: 12pt;
+	float: right;
+	background-color: #fff;
+	border: 0;
+	color: #000;
+	margin-top: 18px;
+	width: 150px;
+	height: 30px;
+	cursor: pointer;
+	z-index: 500;
+	font-weight: bold;
+}
+
+.brand-list {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.brand-toggle {
+	margin-bottom: 8px;	
+}

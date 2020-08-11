@@ -1,0 +1,85 @@
+body:before {
+	background-image: url('img/bg-contact.png');
+}
+
+#feedback {
+	width: 98%;
+	border: 2px solid #000;
+	padding: 8px;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+#feedback-contact {
+	width: 51%;
+	border: 2px solid #000;
+	padding: 8px;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+.f36 { font-size: 28px; }
+.f26 { font-size: 22px; }
+
+.container button {
+	border: 8px solid #000;
+	font-family: inherit;
+	font-size: 18px;
+	padding: 6px 3px;
+	display: block;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.form {
+	margin: 0px 40px 10px 40px;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.about {
+	padding: 40px;
+}
+
+.about a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.about p {
+	margin: 18pt 0 12pt 0;
+}
+
+.line {
+	display: none;
+}
+
+.list {
+	margin: 0 40px;
+}
+
+@media (min-width: 1200px) {
+	.form {
+		margin: 0px 40px 10px 10px;
+	}
+
+	#feedback {
+		width: 90%;
+	}
+
+	.line {
+		position: absolute;
+		display: inline-block;
+		left: 45%;
+		top: 40vh;
+		width: 40%;
+	}
+
+	.form {
+		position: absolute;
+		top: 37vh;
+		width: 100%;
+	}
+}

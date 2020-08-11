@@ -1,0 +1,268 @@
+@media (max-width: 1200px)
+	// ============= Главая страница =============
+	.header
+		&__nav 
+			ul 
+				li 
+					margin-right: 7vw
+
+	// ============= Mercedes Web 1 =============
+	.page-about
+		.main
+			&__title
+				max-width: 45%
+				font-size: 80px
+				margin-top: -20px
+			&__article
+				max-width: 45%
+
+@media (max-width: 992px)
+	// ============= Главая страница =============
+	.header
+		&__nav 
+			ul 
+				li 
+					margin-right: 4vw
+		&__services 
+			width: 95%
+			li
+				.service-img
+					margin-bottom: 5vh
+				a 
+					font-size: 16px
+
+	// ============= Mercedes Web 1 =============
+	.page-about
+		.main
+			&__title
+				font-size: 60px
+				margin-top: -10px
+
+	// ============= Mercedes Web 2 =============
+	.page-services
+		.services-main
+			top: 55%
+			.main__img-services
+				max-width: 45%
+				img 
+					width: 100%
+			.main__article-services
+				max-width: 50%
+
+@media (max-width: 768px)
+	// ============= Главая страница =============
+	.header
+		&__nav 
+			ul 
+				li 
+					margin-right: 2.3vw
+					a 
+						font-size: 13px
+		&__services 
+			width: 100%
+			flex-wrap: wrap
+			align-items: center
+			justify-content: center
+			// margin-top: 10%
+			li
+				width: 45%
+				.service-img
+					margin-bottom: 0
+
+	// ============= Mercedes Web 1 =============
+	.page-about
+		.main
+			flex-direction: column
+			align-items: center
+			&__title,
+			&__article
+				max-width: 100%
+			&__title
+				text-align: center
+				margin-bottom: 40px
+				margin-right: 0
+
+	// ============= Mercedes Web 2 =============
+	.page-services
+		background-attachment: fixed
+		.services-main
+			flex-direction: column
+			align-items: center
+			margin-top: 20%
+			.main__img-services
+				max-width: 50%
+				margin-right: 0
+				&::before,
+				&::after
+					display: none
+				img 
+					height: 100%
+			.main__article-services
+				max-width: 90%
+		.footer
+			position: fixed
+
+	// ============= Mers-Contacts =============
+	.contacts
+		max-width: 500px
+		top: 15%
+		right: 50%
+		transform: translateX(50%)
+
+@media (max-width: 768px) and (orientation:landscape)
+	// ============= Главая страница =============
+	.header
+		&__services 
+			flex-wrap: nowrap
+
+	// ============= Mercedes Web 1 =============
+	.page-about,
+	.page-services
+		.main
+			top: 60vh
+			&__title
+				font-size: 30px
+				margin-bottom: 10px
+			&__article
+				font-size: 12px
+				line-height: 1
+
+	// ============= Mercedes Web 2 =============
+	.page-services
+		.services-main
+			flex-direction: row
+			align-items: flex-start
+			top: 70%
+			margin-top: 30%
+			.main__img-services
+				max-width: 40%
+				margin-right: 20px
+				&::before,
+				&::after
+					display: block
+			.main__article-services
+				max-width: 50%
+				padding: 10px 20px
+				margin-bottom: 50px
+				p 
+					line-height: 1.6
+
+	// ============= Mers-Contacts =============
+	.contacts
+		top: 35%
+		&__wrap 
+			margin-bottom: 50px
+			
+@media (max-width: 576px)
+	// ============= Главая страница =============
+	.header
+		&__nav
+			top: 2%
+			ul 
+				flex-wrap: wrap
+				li 
+					margin-bottom: 8px
+		&__services 
+			li 
+				.service-img 
+					margin-bottom: 0
+					img 
+						height: 180px
+		&__app 
+			flex-direction: column
+			&-text 
+				margin-right: 0
+				margin-bottom: 10px
+				text-align: center
+
+	// ============= Mercedes Web 1 =============
+	.page-about,
+	.page-services
+		.main
+			top: 54%
+		.header-mb
+			.header-nav
+				&__right 
+					.header-social
+						font-size: 10px
+						margin-bottom: 10vw
+					.nav-icon
+						display: block
+					.mobile-nav
+						display: block
+						position: fixed
+						left: 100%
+						width: 100%
+						top: 0
+						bottom: -100%
+						background: rgba(0, 0, 0, 0.9)
+						padding: 100px 20px 15px
+						transform: translate(0, 0)
+						z-index: 5
+						border-left: 1px solid rgba(255, 255, 255, 0.1)
+						-webkit-backdrop-filter: blur(3px)
+						transition: all 0.3s cubic-bezier(1, 0.3, 0.3, 1)
+						a 
+							color: #ffffff
+						li 
+							font-size: 16px
+							font-weight: 600
+							margin-bottom: 10px
+							ul
+								margin: 20px 0
+								li 
+									padding-left: 10px
+									font-size: 14px
+									font-weight: 300
+									opacity: 0.7
+				&.is-nav-opened
+					.mobile-nav
+						transform: translate(-100%, 0)
+					.header-nav__left
+						top: 10%
+						left: 50%
+						z-index: 1000
+						transform: translateX(-50%)
+				.header-menu
+					display: none
+		.main 
+			&__title
+				font-size: 30px
+			&__article
+				font-size: 12px	
+
+	// ============= Mercedes Web 2 =============
+	.page-services
+		.services-main
+			margin-top: 0
+			top: 70%
+			.main__article-services
+				margin-bottom: 50px
+
+	// ============= Mers-Contacts =============
+	.contacts
+		max-width: 330px
+		top: 20%
+		&__wrap
+			margin-bottom: 50px
+			&-credits 
+				flex-direction: column
+				.credits-right,
+				.credits-left
+					max-width: 100%
+
+@media (max-width: 576px) and (min-height: 700px)
+	.page-services
+		.services-main
+			top: 75%
+
+@media (max-height: 350px) and (orientation:landscape)
+	.page-about,
+	.page-services
+		.main
+			top: 65%
+
+@media (max-width: 400px) and (max-height: 650px)
+	.page-services
+		.services-main
+			margin-top: 30%

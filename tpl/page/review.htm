@@ -1,0 +1,71 @@
+{menu}
+<div class="stats"></div>
+<div class="stats-total">Средняя оценка наших сервисов — {rating_total}</div>
+<div class="line"></div>
+<div class="side" id="reviews"></div>
+<div class="footer">&copy; «Larson Вольво» 2011</div>
+<script>
+$(function(){
+var $reviews = $('#reviews'),
+	is_loading = false,
+	stats = {stats},
+	html = '',
+	html_stats = '<h3>Средняя оценка</h3>',
+	klads = ['','Larson Коломенская','Larson Румянцево','<a href="http://body.larsonv.ru" target="_blank">Larson кузовной сервис</a>'],
+	klads_stats = ['','Коломенская','Румянцево','Кузовной'],
+	htmlReview = function(d) {
+		html += '<div class="review"><div class="klad klad-'+d.id_klad+'">'+klads[d.id_klad]+'</div>'
+
+		d.rating && (html += '<div class="s">Оценка: '+d.rating+'</div>')
+		d.review && (html += '<div class="s">Отзыв:</div>' + d.review.replace(/\n/g,'<br>'))
+
+		html += '<div class="author">— '+(d.i + ' ' + d.o + ' ' + d.f.slice(0,1)+'.');
+
+		d.num && (html += ', заказ-наряд '+d.num)
+
+		html += ', '+d.d;
+
+		d.reply && (html += '<p><i>'+d.reply+'</i></p>')
+
+		html += '</div></div>'
+	},
+	loadReview = function() {
+		is_loading = true
+		$.ajax({
+			dataType:'json',
+			data: {
+				c: 'Review',
+				m: 'getMore',
+				from: $('.review').length,
+			},
+			success: function(r){
+				html = ''
+				r.forEach(htmlReview)
+				$reviews.append(html)
+				r.length && (is_loading = false) //если ничего не вернулось, далее загружать нет смысла
+			}
+		})
+	}
+
+Object.keys(stats).reverse().forEach(y => {
+	html_stats += '<b>' + y + '</b><br>'
+	for (id_klad in stats[y]) {
+		html_stats += '<div class="">'+klads_stats[id_klad]+' — '+stats[y][id_klad].toFixed(2)+'</div>'
+	}
+	html_stats += '<br>'
+})
+
+$('.stats').html(html_stats)
+
+loadReview()
+
+$reviews.scroll(function() {
+	var s = $reviews.scrollTop(),
+		h = $reviews.height(),
+		sh = $reviews[0].scrollHeight
+
+	;(s + h > sh - h) && !is_loading && loadReview()
+})
+
+})
+</script>

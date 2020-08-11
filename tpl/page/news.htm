@@ -1,0 +1,78 @@
+{menu}
+<div id="newsx" class="l-content container">
+<article class="page blog">
+	<header>
+		<h2><a href="https://www.instagram.com/larsoncar/" target="_blank">@<span>larsoncar</span></a></h2>
+	</header>
+	<section>
+		<section class="l-post">
+<!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/24a30b049a705e8a88c0a12bfe142430.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+		</section>
+	</section>
+</article>
+</div>
+<div class="footer">&copy; «Larson Вольво» 2011</div>
+<style>
+.page {
+	min-width: 500px;
+}
+
+#newsx {
+	padding: 0 12px;
+	display: flex;
+	justify-content: center;
+}
+
+#newsx a {
+	text-decoration: none;
+}
+
+#newsx a span {
+	text-decoration: underline;
+}
+
+@media only screen and (max-width: 573px) {
+	#newsx { display: block }
+	#newsx .page-half { width: 100% }
+}
+</style>
+<script>
+$(function(){
+	return;
+var $news = $('#news'),
+	is_loading = false,
+	html = '',
+	htmlNews = function(d) {
+		html += '<div class="news">'
+		d.photos && (html += '<img src="'+d.photos+'">')
+		html += '<h3>'+d.title+'</h3>'+d.brief+'<a href="/news/'+d.id+'">подробнее...</a></div>'
+	},
+	loadNews = function() {
+		is_loading = true
+		$.ajax({
+			dataType:'json',
+			data: {
+				c: 'News',
+				m: 'getMore',
+				from: $('.news').length,
+			},
+			success: function(r){
+				html = ''
+				r.forEach(htmlNews)
+				$news.append(html)
+				r.length && (is_loading = false) //если ничего не вернулось, далее загружать нет смысла
+			}
+		})
+	}
+
+loadNews()
+
+$news.scroll(function() {
+	var s = $news.scrollTop(),
+		h = $news.height(),
+		sh = $news[0].scrollHeight
+
+	;(s + h > sh - h) && !is_loading && loadNews()
+})
+})
+</script>

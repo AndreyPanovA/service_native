@@ -1,0 +1,698 @@
+@font-face {
+	font-family: "HelveticaNeueCyr";
+	src: url("fonts/HelveticaNeueCyr-Roman.otf");
+}
+
+@font-face {
+	font-family: "HelveticaNeueCyr";
+	font-weight: bold;
+	src: url("fonts/HelveticaNeueCyr-Bold.otf");
+}
+
+@font-face {
+	font-family: "HelveticaNeueCyr";
+	font-style: italic;
+	src: url("fonts/HelveticaNeueCyr-Italic.otf");
+}
+
+@font-face {
+	font-family: "HelveticaNeueCyr";
+	font-weight: bold;
+	font-style: italic;
+	src: url("fonts/HelveticaNeueCyr-BoldItalic.otf");
+}
+
+:focus {
+	outline:0;
+}
+
+table {
+	border-collapse: separate;
+	border-spacing:0;
+}
+
+body {
+	font-family: "HelveticaNeueCyr", Helvetica, Arial, sans-serif;
+	color:#444444;
+	background:#ffffff;
+}
+
+a:link, a:visited {
+	outline:none;
+	text-decoration: none;
+}
+
+a:hover {
+	color:#39c;
+	text-decoration: none;
+}
+
+.tab-controls {
+	background: #f2f2f2;
+	height: 52px;
+}
+
+#tab-content {
+	padding-left: 0;
+	margin-left: 100px;
+}
+
+.affix {
+	overflow-y: scroll;
+	width: 100px;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	background-color: #425DA7;
+	z-index: 2;
+	border-right: 4px solid;
+}
+
+.affix::-webkit-scrollbar { 
+    display: none; 
+}
+
+.pics-2 {
+	position: relative;
+	padding-top: 47px;
+	text-align: center;
+	cursor: pointer;
+	color: white;
+	font-size: 14px;
+	height: 67px;
+}
+
+.blur {
+	background-color: #fff;
+	opacity: 0.50;
+}
+
+.affix.a1 {	border-right-color: green; }
+.affix.a2 {	border-right-color: #d14836; }
+
+.affix.a1 .pics-2:hover, .affix.a1 .pics-2.active {	background-color: green; }
+.affix.a2 .pics-2:hover, .affix.a2 .pics-2.active {	background-color: #d14836; }
+
+.pics-2:hover, .pics-2.active {
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.border-top td {
+	border-top: 2px solid #999 !important;
+}
+
+.etc-controls {
+	padding-left: 10px;
+	padding-top: 10px;
+	float: left;
+	font-size: 20px;
+	vertical-align: middle;
+}
+
+.etc-controls .glyphicon {
+	margin-top: 5px;
+}
+
+
+/* legacy */
+
+.mt7 {
+	padding-top: 15px;
+}
+
+.mb0 { margin-bottom: 0; }
+
+.tab-count {
+	position: absolute;
+	top: 0%;
+	right: 20%;
+}
+
+.tab-count a {
+	display: inline-block;
+	width: 2em;
+	height: 2em;
+	line-height: 2em;
+	text-align: center;
+	background-color: #F26522;
+	border-radius: 50%;
+	color: white;
+	padding: 0;
+	margin-left: 10px;
+}
+
+.lines-total-wrap {
+	border-radius: 10px;
+	margin: 18px 15px 0 0;
+}
+
+.form-horizontal {
+	margin-top: 20px;
+}
+
+.form-group {
+	margin-bottom: 9px;
+}
+
+.form-control {
+	box-shadow: none;
+}
+
+/*
+select.form-control option {
+	border-right: 1px solid #cccccc;
+}
+*/
+
+.form-horizontal .control-label {
+	text-align: left;
+}
+
+.cp {
+	cursor: pointer !important;
+}
+
+.client-contact {
+	margin-bottom: 1px;
+}
+.client-contact .col-xs-5 {
+	padding-right: 0px;
+}
+
+.client-car-well {
+	display: inline-block;
+	width: 100%;
+	background-color: #eee;
+	padding-top: 8px;
+}
+
+.client-car-delete {
+	position: absolute;
+	top: 8px;
+	right: 0.5%;
+}
+
+.vin-p {
+	font-family: "Courier New", Courier, monospace;
+	margin: 0;
+}
+
+.vin-table {
+	font-size: 11px;
+	line-height: 1.1;
+	margin: 2px 0 0 2px;
+}
+
+.vin-table span {
+	margin-right: 3px;
+	word-spacing: nowrap;
+}
+
+.c {text-align: center !important;}
+.r {text-align: right !important;}
+.l {text-align: left !important;}
+
+.log {
+	position: absolute;
+	right:2px;
+}
+
+.form-horizontal .control-label {
+	line-height: 2;
+}
+
+.chosen-std .chosen-container {
+	position: absolute;
+}
+
+:not(.chosen-std) > .chosen-container-single .chosen-single span {
+	margin-top: 9px;
+}
+
+:not(.chosen-std) > .chosen-container {
+	font-size: 14px;
+}
+
+:not(.chosen-std) > .chosen-container-single .chosen-single {
+	height: 34px;
+	line-height: 1.2;
+}
+
+:not(.chosen-std) > .chosen-container-single .chosen-single div b,
+:not(.chosen-std) > .chosen-container-single .chosen-single abbr {
+	margin-top:5px;
+}
+
+.i-i {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+}
+
+.i-p {
+	width: 100%;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: center 6px;
+}
+
+.i-search {background-image:url(img/icons/search.svg)}
+.i-add {background-image:url(img/icons/add.svg)}
+.i-xls {background-image:url(img/icons/xls.svg)}
+.i-calc {background-image:url(img/icons/calc.svg)}
+.i-News {background-image:url(img/icons/News.svg)}
+.i-User {background-image:url(img/icons/User.svg)}
+
+.ico {
+	width:16px;
+	height:16px;
+	display:inline-block;
+	margin-bottom: -3px;
+}
+
+.prepay-value, .ivs {
+	border: 1px solid #999;
+	font-weight: normal;
+	width: 45px;
+	padding: 0 2px;
+}
+
+.ico-pdf {
+	background:url(../img/icons/pdf.png);
+	height: 18px;
+}
+.ico-xls {
+	background:url(../img/icons/xls.jpg);
+}
+
+a .label {
+	padding-top: 0.3em;
+	padding-bottom: 0.1em;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.s {
+	font-weight:bold;
+}
+
+.q-return {
+	padding: 0 3px 0 0;
+	width: 40px;
+	height: 20px;
+}
+
+.order-status .label {
+	border-radius: 0;
+	padding: 0.2em 0.4em 0.2em;
+	font-size: 100%;
+}
+
+.actions .dropdown-toggle {
+	border: 0;
+	background-color: transparent;
+}
+
+.cbi input {
+	display: none;
+}
+
+.cbi label {
+	margin-right: 1em;
+	padding-top: 6px;	
+}
+
+.cbi .label {
+	border: 2px solid #fff;
+}
+
+.cbi :checked + * {
+	border: 2px solid #2792FF;
+}
+
+.cal-interval {
+	display: inline-block;
+	width: 47.9%;
+}
+
+.lines th, .lines tfoot td {
+	white-space: nowrap;
+}
+
+.place {
+	color: #2792ff;
+	font-size: 12px;
+	line-height: 10px;
+	display: table-cell;
+	vertical-align: top;
+}
+
+.commentPart {
+	display: table-cell;
+	color: #3c763d;
+	border: 0;
+	padding-left: 3px;
+	font-size: 12px;
+	line-height: 12px;
+	cursor: pointer;
+}
+
+.chosen-container-single .chosen-default {
+	color: inherit;
+}
+
+.hover-hl:hover {
+	color:#428BCA;
+	text-decoration: none;
+}
+
+.num {
+	width: 1px;
+}
+
+.num .small {
+	display: block;
+	line-height: 1;
+}
+
+.sr-only {
+	width: auto;
+	height: auto;
+	clip: auto;
+	position: relative;
+}
+
+.bc-warning {
+	background-color: #F0AD4E;
+}
+
+.bc-danger {
+	background-color: #D9534F;
+}
+
+.progress {
+	margin-bottom: 2px;
+	border-radius: 0;
+}
+
+.diary-edit {
+	min-height: 60px;
+}
+
+.black {
+	color: #444 !important;
+	background-color: inherit !important;
+}
+
+.nav-month .input-group-addon {
+	width: 200px;
+	background-color: #fff;
+	border-left: 0;
+	border-right: 0;
+	font-weight: bold;
+}
+
+.nav-month * {
+	border-radius: 0;
+}
+
+.money {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.money-day td, .money-day th {
+	text-align: center;
+}
+
+.money-day-shop tfoot,.money-day-service tfoot, .money-spend tfoot, .money-spend-day .total {
+	font-weight: bold;
+}
+
+.money-spend-submit,
+.money-spend-day .glyphicon-arrow-down,
+.money-spend-month .glyphicon-arrow-down
+{
+	font-size: 24px;
+	color:red;
+	cursor: pointer;
+	margin-top: 8px;
+}
+
+.money-spend-form.in .money-spend-submit,
+.money-spend-day .glyphicon-arrow-up,
+.money-spend-month .glyphicon-arrow-up
+{
+	color:green;
+}
+
+.money-spend-day .glyphicon-arrow-down,
+.money-spend-month .glyphicon-arrow-down
+{
+	font-size: 14px;
+}
+
+.money-spend-comment {
+	height: 62px;
+}
+
+.money-day-sum {
+	margin-top: 0;
+}
+
+.money-day-sum .label, .normal {
+	font-weight:normal;
+}
+
+.money-day-sum .label span {
+	font-weight:bold;
+}
+
+.money-day-sum .cash {
+	color: #3C763D;
+	background-color:#DFF0D8;
+}
+
+.money-day-sum .card {
+	color: #31708F;
+	background-color:#D9EDF7;
+}
+
+.month-shop .panel-heading, .month-shop .total {
+	background-color: #00C144;
+	color: #fff;
+}
+
+.month-shop {
+	border-color: #00C144;
+}
+
+.month-service .panel-heading, .month-service .total {
+	background-color: #ECA100;
+	color: #fff;
+}
+
+.month-service {
+	border-color: #ECA100;
+}
+
+.month-start .panel-heading {
+	background-color: #D753FD;
+	color: #fff;
+}
+
+.month-start {
+	border-color: #D753FD;
+}
+
+#calendar {
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
+#calendar .ui-datepicker-title {
+	color: #000;
+}
+
+#form-signin .col-xs-2 {
+	margin-top: 110px;
+	border: 3px solid #ccc;
+	background-color: #fff;
+}
+
+#form-signin img {
+	width:50%;
+	margin: 12px;
+}
+
+#form-signin .btn-success {
+	width: 100%;
+}
+
+#form-signin .alert {
+	text-align: center;
+	margin-bottom: 8px;
+}
+
+#form-signin {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+#form-signin .row {
+	margin: 0;
+}
+
+.bg-red { background-color: red; }
+.bg-green {
+	background-color: green;
+	color: white;
+}
+
+tr.success > td {
+	background-color: #7DFF8C !important;
+}
+
+#franktable-Wait td[rowspan], #franktable-Diary [rowspan] {
+	background-color: #fff !important;
+}
+
+#franktable-Logx pre {
+	padding: 0;
+	min-height: 22px;
+	cursor: pointer;
+	margin:0;
+}
+
+#franktable-Logx td {
+	padding:2px;
+}
+
+textarea {
+	overflow: hidden;
+}
+
+.ml30 {
+	margin-left: 30px;
+}
+
+#prod-calendar {
+	width:300px;
+	background-color: #d9edf7 !important;
+	padding: 12px;
+	position: absolute;
+	z-index: 999;
+	font-size: 14px;
+}
+
+#block {
+	position: fixed;
+	top:2px;
+	left: 2px;
+}
+
+/* Beautiful border as a real textarea */
+textarea {
+	min-height: 74px;
+}
+
+.table textarea {
+	min-height: 34px !important;
+}
+
+.-OrdersLinked.-item {
+	margin-left: 8px;
+}
+
+.carnumber, .vin, .engine, .uc {
+	text-transform: uppercase;
+}
+
+.client-callback-toggle {
+	position: absolute;
+	top: 10px;
+	right: -2px;
+}
+
+#ui-datepicker-div {
+	z-index: 999 !important;
+}
+
+.linked .col-xs-9 {
+	width: 120px;
+	padding-right: 8px;
+}
+
+.linked table {
+	margin: 8px 0 0 0;
+	width: auto;
+	padding: 0;
+}
+
+.linked thead, .linked tfoot {
+	display: none;
+}
+
+.linked td {
+	padding: 0 !important;
+	border: 0 !important;
+}
+
+.linked tr {
+	padding-right: 10px;
+	display: inline;
+}
+
+.lines-day table {
+	margin-bottom: 8px !important;
+}
+
+.lines-day td, .lines-day th {
+	padding: 0 !important;
+}
+
+.w-auto {
+	width: auto !important;
+	display: inline;
+	height: 30px;
+}
+
+.id_client_car {
+	width: auto !important;
+	display: inline-block !important;
+}
+
+.user-phone {
+	background-color: none;
+	font-style: none;
+	font-size: 12px;
+}
+
+.minified {
+	width: 50px !important;
+	overflow: hidden;
+}
+
+.number-yellow {
+	background-color: #45bbd8 !important;
+}
+
+.commentClient {
+	display: none;
+	top: 24px;
+	left: 30px;
+}
+
+.photo {
+	vertical-align: top;
+	margin-right: 10px;
+	width: 200px;
+}

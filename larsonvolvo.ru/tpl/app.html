@@ -1,0 +1,12 @@
+<script>
+	let url = '';
+	if (~navigator.userAgent.toLowerCase().indexOf('android')) {
+		url = 'https://play.google.com/store/apps/details?id=com.larson.car';
+	} else if (~navigator.userAgent.toLowerCase().indexOf('iphone')) {
+		url = 'https://itunes.apple.com/us/app/larson-car/id1190680675';
+	} else {
+		url = 'https://lk.larsonv.ru';
+	}
+
+	window.location.replace(url);
+</script>

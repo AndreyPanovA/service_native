@@ -1,0 +1,49 @@
+<style>
+#logo {
+	height: 160px;
+}
+.info {
+	font-size: 18px;
+	margin-top: 12px;
+}
+.logo-wrap {
+	background-color: #000;
+}
+</style>
+<div class="col-xs-6 col-xs-offset-3">
+<form id="form-signin" class="c">
+	<div class="col-xs-4 col-xs-offset-4">
+		<div class="form-group c logo-wrap">
+			<img src="css/img/larson.svg">
+		</div>
+		<div class="form-group">
+			<input type="text" id="login" class="form-control input-lg c" placeholder="Логин">
+		</div>
+		<div class="form-group">
+			<input type="password" id="password" class="form-control input-lg c" placeholder="Пароль">
+		</div>
+		<div class="form-group">
+			<button type="button" id="submit" class="btn btn-success input-lg s">Войти</button>
+		</div>
+		<div id="alert-error" class="alert alert-danger hidden"></div>
+	</div>
+</form>
+</div>
+<script>
+$('#submit').on('click',function(){
+	$.ajax({
+		data: {
+			c: 'User',
+			m: 'Auth',
+			login: $('#login').val(),
+			password: $('#password').val(),
+		},
+		success: function (m) {
+			if (m.error) {
+				$('#alert-error').html(m.error).removeClass('hidden')
+			}
+			m.reload && setCookie('tab','News') && (location.href = '/admin#News') && dreload()
+		}
+	})
+})
+</script>

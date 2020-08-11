@@ -1,0 +1,154 @@
+<form id="form-search" class="form-horizontal m12">
+{
+<div class="form-group col-xs-12">
+	{field.html}
+</div>
+}
+<div class="form-group col-xs-12">
+	<div class="col-xs-12">
+		<button class="btn btn-warning" type="submit">Найти</button>
+		<button onclick="search_reset()" type="reset" class="hidden btn btn-default pull-right">Сбросить</button>
+	</div>
+</div>
+</form>
+{js}
+<script>
+$(function(){
+	var data = window.opener.location.href.match(/&search\[[^=]+\]=[^&]+/g,''),
+		$form = $('#form-search'),
+		tab = window.opener.tab,
+		dataChosen = {}
+	
+	if (data) {
+		var pair = [],
+			i = 0,
+			name = '',
+			value = '',
+			input = {},
+			show_reset = false
+		
+		for (i;i<data.length;i++) {
+			pair = data[i].match(/\[([^\]]+)\]=(.*)/)
+			name = pair[1]
+			value = decodeURIComponent(pair[2])
+
+			show_reset = true
+			if ($('#-chosen-'+name).length) {
+				if (name.indexOf('id_')===0 || name.indexOf('ID_')===0) {
+					$.ajax({
+						data:{
+							c: window.opener.tab,
+							field: name,
+							m: 'Search',
+							reverse: 1,
+							q: value
+						},
+						async:false,
+						success:function(r){
+							dataChosen[name] = r
+						}
+					})
+				} else {
+					dataChosen[name] = value
+				}
+
+				show_reset = true
+			} else {
+				input = $('[name="'+name+'"]')[0]
+
+				if (input) {
+					if (input.type === 'checkbox') {
+						input.checked = true
+					} else {
+						input.value = value
+					}
+					show_reset = true
+				}
+			}
+		}
+
+		if (show_reset) {
+			$(':reset').removeClass('hidden')
+		}
+	}
+
+	$('.-chosen').each(function(){
+		var name = this.id.slice(8) //-chosen-
+
+		$('#'+this.id).html(Chosen({
+			name: name,
+			search: {c: tab, field: name},
+			current: {id: value, value: dataChosen[name] || ''}
+		}))
+	})
+
+	$('.defer').each(function(){
+		var t = $(this)
+		if (t.hasClass('datepicker')) {
+			var dt = t.next().val().match(/^(.*?)(\s(.*))?$/)
+
+			if (dt[1].length < 2) return
+
+			var	d_format = t.attr('format-date'),
+				t_format = t.attr('format-time'),
+				dt_out = $.datepicker.formatDate(d_format, $.datepicker.parseDate('yy-m-d',dt[1]))
+			
+			if (t_format) {
+				dt_out += ' ' + $.datepicker.formatTime(t_format, $.datepicker.parseTime('H:m:s', dt[3]))
+			}
+			t.val(dt_out)
+		}
+	})
+	$('.defer').removeClass('defer')
+	InitDatetimepicker() 
+
+	$('.chosen-container').keypress(function(e){
+		e.which==13 && !$(this).find('.chosen-single-with-drop').length
+		&& $form.submit()
+	})
+
+	$form.on('submit',function(e){
+		e.preventDefault()
+
+		var	value = '',
+			name = '',
+			add_qs = '',
+			persistent_search = []
+		
+		$(this).find(':input[name]').each(function(){
+			var t = $(this)
+
+			if (this.type==='checkbox' && !this.checked
+				//chosen не снимает select.option.selected при deselect
+				|| this.type==='select-one' && !t.is(':visible') && t.next().find('.chosen-single span').html().trim()===''
+			) return
+			
+			value = t.val()
+			name = t.attr('name')
+
+			if (!name || value=='') return
+
+			add_qs += '&search['+name+']='+(value ? encodeURIComponent(value) : '')
+		})
+
+		persistent_search = window.opener.location.href.match(/&search\[Part_code\][^&]+/g) //!!! why special case?
+		if (persistent_search) {
+			add_qs += persistent_search.join('')
+		}
+
+		window.opener.location.href = window.opener.location.href.replace(search_regexp,'')+add_qs
+		wclose()
+	})
+
+	$('#-Client').length && Client({
+		widthSelect: 9,
+		search: {single: true},
+		selectId: 'id_Client',
+		onchange: function(select) {
+			$('#id_Client').attr('name', $(select.options[select.selectedIndex]).data('backfield') || 'id_Client')
+		}
+	})
+
+	$(':text:first').select()
+})
+</script>

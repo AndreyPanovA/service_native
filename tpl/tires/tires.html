@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png" />
+    <link rel="stylesheet" href="../assets/cross.css" />
+    <link rel="stylesheet" href="../assets/footer/css/footer.css" />
+    <link rel="stylesheet" href="../assets/left/css/left.css" />
+    <link rel="stylesheet" href="../assets/Navigation/css/navig.css" />
+    <link rel="stylesheet" href="../assets/tires/css/tires.css?{rand}" />
+    <title>{title}</title>
+  </head>
+
+  <body>
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+    <div class="modalClose"></div>
+    <header>
+      <div class="logo">
+        <a href="/">
+          <img src="../assets/img/larson-white.svg" alt="" />
+        </a>
+      </div>
+    </header>
+    <nav role="navigation">
+      <div id="menuToggle">
+        <div class="burger">
+          <span class="line1"></span>
+          <span class="line2"></span>
+          <span class="line3"></span>
+        </div>
+        <ul id="menu" class="links">
+          <a href="/about"><li>О нас</li></a>
+          <a href="/contact"><li>Контакты</li></a>
+          <a href="/corporate"><li>Корпоративным клиентам</li></a>
+          <a href="/review"><li>Отзывы</li></a>
+          <a href="../tires/tires.html"><li class="active">Шины</li></a>
+          <a href="/promo"><li>Aкции</li></a>
+          <a href="/parts"><li>Запчасти и аксессуары</li></a>
+          <a href="/uslugi/strahovanie-avto"><li>Страхование</li></a>
+          <a href="/uslugi/evakuator"><li>Эвакуация</li></a>
+          <a href="/uslugi/diagnosticheskaya-karta"
+            ><li>Диагностическая карта</li></a
+          >
+          <!--<a href="#"><li>Услуги и цены</li></a>-->
+          <a href="../kuzov/kuzov.html"><li>Кузовной ремонт</li></a>
+        </ul>
+      </div>
+    </nav>
+    <div class="blur_container">
+      <div class="tires_descr shad__form cnt">
+        <h2>Шины</h2>
+        <p>
+          Все шины поставляются официально с центральных складов производителей,
+          что сохраняет заводскую гарантию и исключает возможность приобретения
+          контрафактной продукции. На сайте представлен не весь список
+          доступного наличия.
+        </p>
+        <p>
+          Для заказа звоните по многоканальному номеру
+          <a href="tel:+74957811081"> +7 (495) 781-10-81.</a>
+        </p>
+      </div>
+      <div class="ajax_tires shad__form cnt">
+        <h2>Сопутствующие услуги «Larson»</h2>
+        <div class="ajax_price">
+          <div class="total flex__block">
+            <p>
+              Шиномонтаж 4-х колёс
+            </p>
+            <p>2574р.</p>
+          </div>
+          <div class="total flex__block">
+            <p>
+              Сезонное хранение колёс (комплект, 4шт., с дисками или без, срок
+              до 8мес.)
+            </p>
+            <p>3980р.</p>
+          </div>
+          <div class="total flex__block">
+            <p>
+              Балансировка 4-х колёс (включая снятие/установку колёс) (например,
+              для владельцев колёс в сборе)
+            </p>
+            <p>1584р.</p>
+          </div>
+          <div class="total flex__block">
+            <p>
+              Колесо 4 шт. (снятие/установка) (например, для владельцев колёс в
+              сборе не требующих балансировки)
+            </p>
+            <p>792р.</p>
+          </div>
+        </div>
+      </div>
+      <style>
+        .tireImg {
+          max-height: 200px;
+        }
+        .tire_text {
+          margin-left: 25px !important;
+        }
+        .bold {
+          font-weight: 600;
+          font-size: 25px;
+        }
+        .scroll {
+          overflow: auto;
+          height: 50vh;
+        }
+        .scroll::-webkit-scrollbar {
+          display: none;
+        }
+      </style>
+      <form action="" class="form shad__form">
+        <div class="size">
+          <label
+            >Диаметр
+            <input type="number" class="param" name="diameter" />
+          </label>
+          <label
+            >Высота профиля в мм.
+            <input type="number" class="param" name="height" />
+          </label>
+          <label
+            >Ширина в мм.
+            <input type="number" class="param" name="width" />
+          </label>
+        </div>
+        <div class="filter-season">
+          <div class="filter_left"></div>
+          <button type="button" id="tire-find">Найти</button>
+        </div>
+
+        <div class="suppliers">
+          <div class="brand-toggle">
+            Производители:
+            <label
+              ><input type="checkbox" class="brand-toggle-all" checked="" />
+              все</label
+            >
+          </div>
+          <div class="brand-list suppliers-flex"></div>
+        </div>
+      </form>
+      <div class="scroll" id="tires"></div>
+      <footer></footer>
+    </div>
+    <script src="../assets/footer/component/footer.js?{rand}"></script>
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/tires.js?{rand}"></script>
+    <script src="../assets/js/about.js"></script>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+/* mobile portrait first */
+body:before {
+	background-image: url('img/bg-index.jpg?2');
+}
+
+
+html, body {
+	height: 100%;
+}
+
+.container {
+	flex-direction: column;
+	align-items: stretch;
+}
+
+h1 {
+	font-size: 24px;
+	font-weight: normal;
+}
+
+.side h1 {
+	letter-spacing: 0.25em;
+}
+
+.side {
+	margin: auto 0;
+	width: 50%;
+	text-transform: uppercase;
+	line-height: 1.7em;
+	letter-spacing: 0.15em;
+}
+
+.last {
+	height: 59%;
+}
+
+.side a {
+	text-transform: none;
+	text-decoration: none;
+	padding: 6px 20px 4px 20px;
+	line-height: 4em;
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+
+.side a:hover {
+	background: rgba(150,150,150,0.2);
+}
+
+footer {
+	bottom: 0;
+	text-align: right;
+	line-height: 1.2em;
+	font-size: 8px;
+	right: 2px;
+	position: fixed;
+}
+
+@media (min-width: 1200px) {
+	footer {
+	}
+
+	.side {
+		position: relative;
+	}
+
+	.menu li {
+		display: inline-block;
+		padding: 6px 0;
+	}
+
+	.logo-menu {
+		width: 12%;
+		padding: 6px 25px;
+	}
+
+	.menu .logo-menu:hover {
+		background-color: inherit;
+	}
+
+	.logo-menu .img {
+		width: 100%;
+	}
+
+	.menu {
+		width: 100%;
+		display: flex;
+		align-items: center;
+	}
+
+	.l1 {
+		width: 15%;
+	}
+
+	.l2 {
+		width: 14%;
+	}
+
+	.l3 {
+		width: 15%;
+	}
+
+	.lk {
+		display: block;
+	}
+
+	.r1 {
+		width: 24%;
+	}
+
+	.r2 {
+		width: 10%;
+	}
+
+	.r3 {
+		width: 10%;
+	}
+
+	.logo {
+		display: none;
+	}
+
+	.menu-wrap {
+		flex: 100%;
+		align-items: baseline;
+	}
+}

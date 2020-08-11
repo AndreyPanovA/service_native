@@ -1,0 +1,374 @@
+.center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.textSelect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+section:last-child {
+  margin-bottom: 100px;
+}
+.top-text {
+  text-transform: uppercase;
+  font-size: 28px;
+  color: #313131;
+  font-weight: bold;
+  font-family: "HelveticaNeueCyr", sans-serif;
+}
+.bmw_section {
+  height: 100vh;
+  background-color: #f3f3f3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+.bmw_section .bmw_left {
+  float: left;
+  width: 105%;
+  height: 100%;
+  shape-outside: polygon(0 0, 0 200px, 100% 400px, 100% 100%, 0 100%);
+  shape-outside: polygon(0 0, 0 200px, 300px 600px);
+  -webkit-clip-path: polygon(0 0, 0 200px, 300px 600px);
+          clip-path: polygon(0 0, 0 200px, 300px 600px);
+}
+.bmw_section .bmw_right {
+  z-index: 10;
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+  text-align: right !important;
+  padding: 0 40px;
+  top: 20%;
+  position: relative;
+  font-family: "ProximaNovaRegular";
+  margin-left: 20vw;
+}
+.bmw_section .bmw_right .polygon-left {
+  float: left;
+  height: 100vh;
+  width: 50% !important;
+  shape-outside: polygon(0 0, 68% 44%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0 0, 68% 44%, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 68% 44%, 100% 100%, 0% 100%);
+}
+.bmw_section .bmw_right p {
+  font-weight: 16px !important;
+  margin: 0 0 10px;
+}
+.bmw_section .left_icon {
+  float: left;
+  width: 55%;
+  height: 100%;
+  shape-outside: polygon(0 0, 0 200px, 100% 400px, 100% 100%, 0 100%);
+}
+.bmw_section .bmw_img {
+  background-image: url(img/bmw-left.png);
+  background-repeat: no-repeat;
+  margin-top: 0px;
+  width: 963px;
+  height: 666px;
+  right: 50%;
+  bottom: -10vh;
+  z-index: 10;
+  position: absolute;
+}
+.opportunity_section {
+  overflow: hidden;
+  height: 100vh;
+  background-color: white;
+  position: relative;
+}
+.opportunity_section .opr_left {
+  padding: 0 40px;
+  top: 5%;
+  font-family: "ProximaNovaRegular";
+  position: relative;
+  z-index: 10;
+  top: 10%;
+  margin-left: 30px;
+}
+.opportunity_section .opr_left .polygon-right {
+  float: right;
+  height: 100vh;
+  width: 50% !important;
+  shape-outside: polygon(100% 0, 0 100%, 0 16%);
+  -webkit-clip-path: polygon(100% 0, 0 80%, 0 16%);
+          clip-path: polygon(100% 0, 0 80%, 0 16%);
+}
+.opportunity_section .opr_left p {
+  font-size: 25px;
+  margin: 0 0 10px;
+}
+.opportunity_section .opr_img {
+  background-repeat: no-repeat;
+  width: 963px;
+  left: 50%;
+  right: 0;
+  top: 0;
+  position: absolute;
+}
+.works_wrapper {
+  padding: 30px 0px;
+}
+.works_wrapper h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.bottom_description {
+  padding: 20px 40px;
+  color: white;
+}
+.bottom_description .contact__link {
+  text-align: center;
+  font-size: 25px;
+}
+.bottom_description p {
+  margin-bottom: 20px;
+  color: white;
+}
+.panoram {
+  position: absolute;
+  left: 70%;
+  top: 0;
+  width: 30%;
+  height: 200px;
+  border: 2px solid #333;
+}
+.panoram::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.main__title {
+  color: #ffffff;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+  margin-bottom: 50px;
+  font-size: 55px;
+}
+.card__menu {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.card__menu .card__menu-item {
+  background-color: #fafafa;
+  width: 250px;
+  border-radius: 5px;
+  padding: 20px;
+  -webkit-box-shadow: 0px 7px 14px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 0px 7px 14px 0px rgba(50, 50, 50, 0.75);
+  margin-right: 10px;
+  margin-bottom: 40px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  min-height: 300px;
+  cursor: pointer;
+}
+.card__menu .card__menu-item:hover {
+  border-top-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+}
+.card__menu .card__menu-item p {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.card__menu .card__menu-item img {
+  width: 210px;
+  border-radius: 5px;
+}
+.show__tab {
+  cursor: cell;
+  display: block !important;
+  -webkit-animation: 1s opacityer;
+          animation: 1s opacityer;
+}
+.tab__item {
+  overflow: auto;
+  max-height: 100vh;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  display: none;
+  z-index: 100;
+}
+.tab__title {
+  text-align: center;
+  background-color: #333;
+  color: #ffffff;
+  padding: 20px 40px;
+  border-bottom: 2px solid #333;
+}
+.content {
+  -webkit-box-shadow: 0px 7px 14px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 0px 7px 14px 0px rgba(50, 50, 50, 0.75);
+  background-color: #ffffff;
+}
+.content .all_content {
+  padding: 20px 40px;
+  max-width: 80%;
+  margin: auto;
+}
+.content .all_content .text_content {
+  margin-bottom: 20px;
+}
+.content .all_content .text_content p {
+  text-indent: 45px;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+.content .all_content .image_conent .image_line {
+  -webkit-box-shadow: 0px 7px 14px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 0px 7px 14px 0px rgba(50, 50, 50, 0.75);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 20px 40px;
+}
+.content .all_content .image_conent .image_line .img {
+  max-width: 170px;
+  margin-right: 10px;
+}
+@media (max-width: 1370px) {
+  .bmw_right p {
+    font-size: 15px !important;
+  }
+  .polygon-right p {
+    font-size: 12px !important;
+  }
+  .opr_left p {
+    font-size: 15px !important;
+  }
+}
+@media (max-width: 1000px) {
+  .main__title {
+    top: 16%;
+    font-size: 40px;
+  }
+  .panoram {
+    left: 50%;
+    width: 50%;
+  }
+}
+@media (max-width: 992px) {
+  max-width: 500px !important;
+}
+@media (max-width: 767px) {
+  .top-text {
+    font-size: 18px !important;
+  }
+  .opr_left p {
+    font-size: 15px !important;
+  }
+  .polygon-right p {
+    font-size: 15px !important;
+  }
+  .content {
+    padding: 0 !important;
+  }
+  .image_conent {
+    padding: 0 !important;
+  }
+  .image_conent .img {
+    margin: 0 !important;
+  }
+  .text_content {
+    width: 100%;
+  }
+}
+@media (max-width: 450px) {
+  .bmw_right {
+    padding-top: 35px !important;
+    background-color: rgba(50, 50, 50, 0.55);
+    width: 100vw;
+    color: white;
+    top: 0 !important;
+    margin: 0 !important;
+    left: 0;
+    -ms-flex-preferred-size: 100% !important;
+        flex-basis: 100% !important;
+  }
+  .opr_left {
+    padding-top: 35px !important;
+    background-color: rgba(50, 50, 50, 0.55);
+    overflow: auto;
+    width: 100vw;
+    color: white;
+    top: 0 !important;
+    margin: 0 !important;
+    left: 0;
+    height: 100%;
+    -ms-flex-preferred-size: 100% !important;
+        flex-basis: 100% !important;
+  }
+  .polygon-right {
+    display: none;
+  }
+  .polygon-left {
+    display: none;
+  }
+  .bmw_right p {
+    font-size: 15px !important;
+  }
+}
+@-webkit-keyframes opacityer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes opacityer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

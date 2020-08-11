@@ -1,0 +1,16 @@
+{table}
+<style>
+.post {
+	height: 1.7em;
+	overflow: hidden;
+}
+</style>
+<script>
+$('.post').on('click',function() {
+	$(this).toggleClass('post')
+})
+
+$('#toggleAll').on('click',function() {
+	$('#franktable-Logx pre')[$('.post').length ? 'removeClass' : 'addClass']('post')
+})
+</script>

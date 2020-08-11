@@ -1,0 +1,64 @@
+{menu}
+<div class="side list">
+	<div class="line"></div>
+	<h2>Larson — это качественный сервис, а еще:</h2>
+	<ul>
+		<li>- Удобная парковка</li>
+		<li>- Зона ожидания</li>
+		<li>- Бесплатный чай/кофе</li>
+		<li>- Wi-Fi доступ в Интернет</li>
+		<li>- Отличная система бонусов для постоянных Клиентов</li>
+		<li>- Ежедневно с 09 до 20, без выходных и праздничных дней</li>
+	</ul>
+	<div class="form hidden">
+		<input id="feedback-contact" type="text" placeholder="Как с Вами связаться">
+		<textarea id="feedback" rows="6" placeholder="Ваши вопросы, пожелания, отзывы"></textarea>
+		<button type="button" id="feedback-submit" disabled>Отправить</button>
+	</div>
+</div>
+<!-- В остальные дни будем рады видеть Вас с 9 до 20 часов ежедневно, телефон для записи: (495) 781-10-81 — единый для всех сервисных центров и кузовного цеха. -->
+<div class="side about">
+	<span class="f36">Единый телефон:</span> <a class="f26 comagic" href="tel:+74957811081">+7 (495) 781-10-81</a>
+	<p>Ежедневно с 9 до 20</p>
+	<!-- <p class="s">31 декабря (Новый год) Ларсон работает с 09:00 до 17:00.<br>
+				1 и 2 января 2019 года – выходные дни.<br>
+				С 3 января мы работаем с 09:00 до 20:00 ежедневно
+	</p> -->
+	<p class="s">Larson (Вольво) Коломенская</p>
+	м. Коломенская<br>
+	проспект Андропова, д.22, стр.2, БЦ «Нагатинский»
+	<p class="s">Larson Кузовной центр</p>
+	м. Коломенская<br>
+	проспект Андропова, д.22, стр.2, БЦ «Нагатинский»<br>
+	<p class="s">Larson Можайка</p>
+	Московская область, Новоивановское,<br>
+	Можайское шоссе, вл. 167<br>
+	<p><a href="mailto:info@larsonv.ru">info@larsonv.ru</a></p>
+	<button type="button" id="feedback-show">Свяжитесь с нами</button>
+</div>
+
+<script>
+$('#feedback-show').on('click', function() {
+	$('.hidden').removeClass('hidden')
+	$('#feedback').select()
+	$(window).scrollTop(0)
+})
+
+$('#feedback').on('keyup', function() {
+	$('#feedback-submit').prop('disabled', this.value.trim().length < 7)
+})
+
+$('#feedback-submit').on('click', function() {
+	$.ajax({
+		data: {
+			c: 'Review',
+			m: 'Feedback',
+			txt: $('#feedback').val(),
+			contact: $('#feedback-contact').val(),
+		},
+		success: r => {
+			r && $('#feedback-submit').replaceWith('Благодарим за обратную связь!');
+		}
+	});
+});
+</script>

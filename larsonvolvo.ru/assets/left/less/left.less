@@ -1,0 +1,282 @@
+body {
+  color: #fff;
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  background-image: url("../img/Larson_backgrounds/BACK9.jpg");
+  &:before {
+    background-image: url("../../../assets/img/front-overlay.png");
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center top;
+  }
+  header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    min-width: 10vh;
+    .logo {
+      min-width: 180px;
+      position: relative;
+      z-index: 1;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 10%);
+    }
+  }
+  section {
+    display: flex;
+    justify-content: flex-end;
+    .container {
+      max-width: 1000px;
+      margin-right: 10vw;
+      position: relative;
+      z-index: 2;
+      padding: 20px 40px;
+      // Бургер меню Панов Андрей https://github.com/AndreyPanovA
+      .title {
+        font: normal 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+        flex-basis: 50%;
+        span {
+          font-weight: 150;
+          display: block;
+          text-indent: -0.02em;
+          font-size: 115px;
+          text-transform: uppercase;
+          text-transform: uppercase;
+          margin-bottom: 10px;
+          line-height: 115px;
+          display: block;
+          &:nth-child(1) {
+            font-size: 55px;
+          }
+        }
+        .little {
+          font: normal 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-weight: 200;
+          display: block;
+          text-indent: -0.02em;
+          font-size: 105px;
+          text-transform: uppercase;
+          text-transform: uppercase;
+          margin-bottom: 10px;
+          line-height: 115px;
+          display: block;
+        }
+        .huge {
+          font-weight: 600;
+        }
+      }
+      .wrapper {
+        width: 100% !important;
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        flex-wrap: wrap;
+        .huge {
+          font: normal 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-weight: 200;
+          display: block;
+          text-indent: -0.02em;
+          font-size: 105px;
+          text-transform: uppercase;
+          text-transform: uppercase;
+          margin-bottom: 10px;
+          line-height: 115px;
+          display: block;
+          font-weight: 600;
+          margin: 0;
+          padding: 0;
+        }
+        .photo_block {
+          margin-top: 20px;
+
+          iframe {
+            width: 100%;
+            height: 100%;
+          }
+          iframe,
+          img {
+            border-top: 2px solid white;
+            padding-top: 20px;
+            border-bottom: 2px solid white;
+            padding-bottom: 20px;
+          }
+
+          flex-basis: 50%;
+        }
+        .text__block {
+          margin-top: 20px;
+          flex-basis: 40%;
+          margin-bottom: 50px;
+          background: rgba(0, 0, 0, 0.7);
+          padding: 20px;
+          p {
+            font: normal 13px/20px "Helvetica Neue", Helvetica, Arial,
+              sans-serif;
+            text-align: justify;
+            margin-bottom: 10px;
+            // Бургер меню Панов Андрей https://github.com/AndreyPanovA
+          }
+        }
+        .map {
+          margin-bottom: 50px;
+          flex-basis: 70%;
+          h1 {
+            margin-bottom: 10px;
+          }
+          .contacts__block {
+            margin-top: 20px;
+            display: flex;
+            p {
+              color: white !important;
+              margin: 0;
+            }
+            .descr__left {
+              margin-right: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.bonus__rules {
+  margin-bottom: 100px;
+  position: relative;
+  z-index: 100;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  p {
+    margin-bottom: 10px;
+  }
+}
+.black {
+  max-width: 870px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px 40px;
+  margin-bottom: 20px;
+}
+// Увеличение
+
+.video {
+  cursor: pointer;
+  &::before {
+    content: "";
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+}
+.skew {
+  position: fixed;
+  animation: 0.5s opacityer ease-in-out;
+  top: -10%;
+  left: -10%;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  &::before {
+    content: none;
+  }
+  iframe {
+    width: 50vw !important;
+    height: 50vh !important;
+  }
+}
+.bigVideo {
+  height: 50% !important;
+  iframe {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    margin-right: 0 !important;
+  }
+  main {
+    // border: 2px solid red;
+    max-width: 100vw !important;
+  }
+  iframe {
+    min-height: 50vh;
+  }
+  .text__block,
+  .map {
+    flex-basis: 100% !important;
+  }
+  .photo_block {
+    flex-basis: 100% !important;
+  }
+}
+@media (max-width: 767px) {
+}
+@media (max-width: 450px) {
+  .sectionContent {
+    justify-content: initial;
+  }
+  .text__block {
+    padding: 0;
+  }
+  .map {
+    margin-right: 0;
+    padding: 0;
+    h1 {
+      font-size: 15px;
+    }
+    .contacts__block {
+      p {
+        margin: 0;
+        font-size: 12px;
+      }
+    }
+  }
+  .container {
+    margin-right: 0 !important;
+  }
+}
+
+@keyframes opacityer {
+  0% {
+    opacity: 0;
+    background-color: #fff;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+// Бургер меню Панов Андрей https://github.com/AndreyPanovA
+
+.modalClose {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 4;
+  cursor: pointer;
+}
+
+.blur {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}

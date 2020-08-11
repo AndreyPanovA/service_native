@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+    <title>{title}</title>
+
+    <link rel="stylesheet" href="../../assets/cross.css" />
+    <link rel="stylesheet" href="../../assets/loader/css/loader.css" />
+    <link rel="stylesheet" href="../../assets/left/css/left.css" />
+    <link rel="stylesheet" href="../../assets/Navigation/css/navig.css" />
+    <link rel="stylesheet" href="../../assets/footer/css/footer.css" />
+    <style>
+      html {
+        background-color: black;
+        color: white;
+      }
+      body {
+        background-image: url("../../assets/img/clients/bg-corporate.png");
+        background-attachment: fixed;
+      }
+      body::before {
+        content: "";
+        display: block;
+        position: fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -10;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+      .client__container {
+        max-width: 970px;
+        margin: auto;
+        padding: 40px;
+      }
+      .client__container p {
+        font-size: 25px;
+        margin: 50px 0;
+        font-weight: 800;
+      }
+      .li li {
+        margin-bottom: 15px;
+      }
+	  .clients img {
+        width: 180px;
+        margin: 15px;
+        margin-top: -25px;
+      }
+      .clients {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .goBack {
+        cursor: pointer;
+        padding: 10px 20px;
+        border: 2px solid white;
+        border-radius: 5px;
+      }
+      .goBack:hover {
+        background-color: white;
+        color: black;
+        -webkit-box-shadow: 0px 0px 14px 0px rgba(255, 255, 255, 0.75);
+        -moz-box-shadow: 0px 0px 14px 0px rgba(255, 255, 255, 0.75);
+        box-shadow: 0px 0px 14px 0px rgba(255, 255, 255, 0.75);
+        animation: 0.3s shake ease-in-out;
+      }
+      .goBack::before {
+        content: "\21E6";
+        margin-right: 10px;
+      }
+      @keyframes shake {
+        0% {
+          transform: translateX(0px);
+        }
+        50% {
+          transform: translateX(-10px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader-wrapper">
+      <!-- <div id="loader"><img src="../assets/img/larson-white.svg" alt="" /></div> -->
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+    <div class="modalClose"></div>
+    <nav role="navigation">
+      <div id="menuToggle">
+        <div class="burger hovBtn">
+          <span class="line1"></span>
+          <span class="line2"></span>
+          <span class="line3"></span>
+        </div>
+        <ul id="menu" class="links">
+          <a href="/about"><li>О нас</li></a>
+          <a href="/contact"><li>Контакты</li></a>
+          <a href="/corporate"
+            ><li class="active">Корпоративным клиентам</li></a
+          >
+          <a href="/review"><li>Отзывы</li></a>
+          <a href="/tires"><li>Шины</li></a>
+          <a href="/promo"><li>Aкции</li></a>
+          <a href="/parts"><li>Запчасти и аксессуары</li></a>
+          <a href="/uslugi/strahovanie-avto"><li>Страхование</li></a>
+          <a href="/uslugi/evakuator"><li>Эвакуация</li></a>
+          <a href="/uslugi/diagnosticheskaya-karta"><li>Диагностическая карта</li></a>
+          <!--<a href="#"><li>Услуги и цены</li></a>-->
+          <a href="https://body.larsonv.ru"><li>Кузовной ремонт</li></a>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="client__container blur_container">
+      <div class="client__links clients">
+        <a onclick="javascript:history.back()" class="goBack">Назад</a>
+        <a href="/">
+          <img src="../assets/img/larson-white.svg" alt="Larson" />
+        </a>
+      </div>
+      <p>Larson для корпоративных Клиентов — это:</p>
+      <ul class="li">
+        <li>- Обслуживание с полным НДС (20%)</li>
+        <li>- Оперативная бухгалтерия (акты сверок, первичная документация)</li>
+        <li>
+          - Авансовые и кредитные договоры с отсрочкой до 30 календарных дней
+        </li>
+        <li>
+          - Гибкая система обслуживания (оригинальные и неоригинальные детали,
+          фиксация цен сроком до одного года)
+        </li>
+      </ul>
+      <p>Уже сегодня нас выбирают:</p>
+      <div class="clients">
+        <img src="../../assets/img/clients/client-1.png" alt="nestle" />
+        <img src="../../assets/img/clients/client-2.png" alt="nestle" />
+        <img src="../../assets/img/clients/client-3.png" alt="nestle" />
+        <img src="../../assets/img/clients/client-4.png" alt="nestle" />
+        <img src="../../assets/img/clients/client-5.png" alt="nestle" />
+        <img src="../../assets/img/clients/client-6.png" alt="nestle" />
+        <img src="../../assets/img/clients/client-7.png" alt="nestle" />
+        <img src="../../assets/img/clients/client-8.png" alt="nestle" />
+        <img src="../../assets/img/clients/client-9.png" alt="nestle" />
+        <img src="../../assets/img/clients/client-10.png" alt="nestle" />
+      </div>
+    </div>
+    <footer></footer>
+    <script src="../../assets/js/about.js"></script>
+    <script src="../../assets/footer/component/footer.js?{rand}"></script>
+  </body>
+</html>
