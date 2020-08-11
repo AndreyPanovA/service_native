@@ -108,20 +108,135 @@
         </div>
       </div>
       <div class="serv-catalog">
-        <div class="serv-container">
+        <div class="srv-catalog-title">
           <img
             src="../assets/img/serv/catalog.png"
             alt="..."
             class="catalog-abs-header"
           />
-          <h2>Каталог моделей</h2>
-          <p>Ремонт Volvo XC901</p>
-          <div class="catalog_row flex_cc">
-            <div class="serv-item"></div>
-            <div class="serv-item"></div>
-            <div class="serv-item"></div>
-            <div class="serv-item"></div>
-            <div class="serv-item"></div>
+          <div class="srv-catalog_names">
+            <h2>Каталог моделей</h2>
+            <p>Ремонт Volvo XC901</p>
+          </div>
+        </div>
+        <div class="serv-container">
+          <div class="catalog_row flex_c">
+            <div class="serv-item">
+              <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+              <p>Toyota RAV4</p>
+            </div>
+            <div class="serv-item">
+              <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+              <p>Toyota RAV4</p>
+            </div>
+            <div class="serv-item">
+              <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+              <p>Toyota RAV4</p>
+            </div>
+            <div class="serv-item">
+              <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+              <p>Toyota RAV4</p>
+            </div>
+            <div class="serv-item">
+              <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+              <p>Toyota RAV4</p>
+            </div>
+            <div class="serv-item">
+              <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+              <p>Toyota RAV4</p>
+            </div>
+
+            <!--  -->
+            <div class="serv-item">
+              <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+              <p>Toyota RAV4</p>
+            </div>
+            <div class="serv-item">
+              <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+              <p>Toyota RAV4</p>
+            </div>
+            <div class="serv-item">
+              <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+              <p>Toyota RAV4</p>
+            </div>
+            <div class="serv-item">
+              <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+              <p>Toyota RAV4</p>
+            </div>
+            <div class="serv-item">
+              <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+              <p>Toyota RAV4</p>
+            </div>
+            <div class="serv-item">
+              <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+              <p>Toyota RAV4</p>
+            </div>
+            <!--  -->
+            <div class="serv-item">
+              <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+              <p>Toyota RAV4</p>
+            </div>
+            <div class="serv-item">
+              <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+              <p>Toyota RAV4</p>
+            </div>
+            <div class="serv-item">
+              <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+              <p>Toyota RAV4</p>
+            </div>
+            <div class="serv-item">
+              <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+              <p>Toyota RAV4</p>
+            </div>
+            <div class="serv-item">
+              <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+              <p>Toyota RAV4</p>
+            </div>
+            <div class="serv-item">
+              <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+              <p>Toyota RAV4</p>
+            </div>
+            <div class="serv-item">
+              <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+              <p>Toyota RAV4</p>
+            </div>
+            <div class="serv-item">
+              <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+              <p>Toyota RAV4</p>
+            </div>
+            <div class="serv-item">
+              <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+              <p>Toyota RAV4</p>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+        <div class="serv-comand">
+          <h2>Наша команда</h2>
+          <div class="serv-tab-container serv-container">
+            <div class="tab-item tab-1 tab-show">
+              <p>Рассказываем немного о себе и о наших ценностях.</p>
+            </div>
+            <div class="tab-item tab-2">
+              <div class="flex_c">
+                <div class="foto">
+                  <img src="../assets/img/serv/petr.png" alt="Петр Бакулов" />
+                </div>
+                <div class="foto">
+                  <img
+                    src="../assets/img/serv/sergey.jpg"
+                    alt="Сергей Тарасов"
+                  />
+                </div>
+                <div class="foto">
+                  <img src="../assets/img/serv/fedor.jpg" alt="Федр Бакулов" />
+                </div>
+              </div>
+            </div>
+            <div class="tab-btn-container flex_c">
+              <div class="tab-btn btn-1 tab-active" id="0">Ценности</div>
+              <div class="tab-btn btn-2" id="1">Люди</div>
+            </div>
           </div>
         </div>
       </div>
@@ -131,5 +246,25 @@
 
     <script src="../assets/js/about.js"></script>
     <script src="../assets/footer/component/footer.js?{rand}"></script>
+    <script>
+      let btns = document.querySelectorAll(".tab-btn");
+      let tabs = document.querySelectorAll(".tab-item");
+      function tabChange() {
+        //
+        btns.forEach((btn, idx) => {
+          btn.classList.remove("tab-active");
+          tabs[idx].classList.remove("tab-show");
+        });
+        //
+        this.classList.add("tab-active");
+        //
+        tabs[event.target.id].classList.add("tab-show");
+        //
+      }
+
+      btns.forEach((btn, idx) => {
+        btn.addEventListener("click", tabChange);
+      });
+    </script>
   </body>
 </html>
